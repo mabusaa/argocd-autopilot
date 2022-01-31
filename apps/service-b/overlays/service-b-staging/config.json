@@ -1,0 +1,1 @@
+{"appName":"service-b","userGivenName":"service-b","destNamespace":"default","destServer":"https://kubernetes.default.svc","srcPath":"apps/service-b/overlays/service-b-staging","srcRepoURL":"https://github.com/mabusaa/argocd-autopilot.git","srcTargetRevision":"","labels":null}
