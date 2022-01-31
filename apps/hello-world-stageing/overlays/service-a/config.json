@@ -1,0 +1,1 @@
+{"appName":"hello-world-stageing","userGivenName":"hello-world-stageing","destNamespace":"default","destServer":"https://kubernetes.default.svc","srcPath":"apps/hello-world-stageing/overlays/service-a","srcRepoURL":"https://github.com/mabusaa/argocd-autopilot.git","srcTargetRevision":"","labels":null}
