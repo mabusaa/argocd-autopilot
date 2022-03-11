@@ -15,13 +15,9 @@ spec:
       name: 'myapp-{{ branch }}-{{ number }}'
     spec:
       source:
-        repoURL: 'https://github.com/myorg/myrepo.git'
+        repoURL: 'https://github.com/mabusaa/argocd-autopilot.git'
         targetRevision: '{{ head_sha }}'
-        path: helm-guestbook
-        helm:
-          parameters:
-          - name: "image.tag"
-            value: "pull-{{ head_sha }}"
+        path: manifests/nginx
       project: default
       destination:
         server: https://kubernetes.default.svc
