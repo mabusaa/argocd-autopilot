@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: myapp
+spec:
+  generators:
+  - pullRequest:
+      github:
+        # The GitHub organization or user.
+        owner: mabusaa
+        # The Github repository
+        repo: argocd-autopilot
+  template:
+    metadata:
+      name: 'myapp-{{ branch }}-{{ number }}'
+    spec:
+      source:
+        repoURL: 'https://github.com/myorg/myrepo.git'
+        targetRevision: '{{ head_sha }}'
+        path: helm-guestbook
+        helm:
+          parameters:
+          - name: "image.tag"
+            value: "pull-{{ head_sha }}"
+      project: default
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ branch }}-{{ number }}"
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
