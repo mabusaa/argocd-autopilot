@@ -15,4 +15,4 @@ kind: Kustomization
 namespace: argocd
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.3.1/manifests/install.yaml
-  - https://raw.githubusercontent.com/argoproj-labs/applicationset/v0.3.0/manifests/install.yaml
+  - https://raw.githubusercontent.com/argoproj/applicationset/master/manifests/install.yaml
